@@ -1,0 +1,18 @@
+Device: R1
+Role: Router
+Project: CCNA Section 04 - Cabling and IP Basics
+
+enable
+configure terminal
+hostname R1
+no ip domain-lookup
+
+interface gigabitEthernet 0/0
+ip address 192.168.10.1 255.255.255.0
+no shutdown
+exit
+end
+
+Verification:
+show ip interface brief
+show running-config
