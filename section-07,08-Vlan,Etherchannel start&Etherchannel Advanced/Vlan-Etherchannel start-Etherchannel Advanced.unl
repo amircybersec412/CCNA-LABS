@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<lab name="Vlan-Etherchannel start-Etherchannel Advanced" version="1" scripttimeout="300" lock="0">
+  <topology>
+    <nodes>
+      <node id="1" name="SW1" type="iol" template="iol" image="i86bi_linux_l2-adventerprisek9-ms.SSA.high_iron_20180510.bin" ethernet="4" nvram="1024" ram="256" serial="0" console="" delay="0" icon="Switch-3D-L3-S.svg" config="0" left="219" top="211">
+        <interface id="0" name="e0/0" type="ethernet" network_id="1"/>
+        <interface id="16" name="e0/1" type="ethernet" network_id="2"/>
+        <interface id="32" name="e0/2" type="ethernet" network_id="3"/>
+        <interface id="48" name="e0/3" type="ethernet" network_id="4"/>
+        <interface id="1" name="e1/0" type="ethernet" network_id="9"/>
+        <interface id="17" name="e1/1" type="ethernet" network_id="7"/>
+        <interface id="2" name="e2/0" type="ethernet" network_id="13"/>
+      </node>
+      <node id="2" name="SW2" type="iol" template="iol" image="i86bi_linux_l2-adventerprisek9-ms.SSA.high_iron_20180510.bin" ethernet="3" nvram="1024" ram="256" serial="0" console="" delay="0" icon="Switch-3D-L3-S.svg" config="0" left="469" top="211">
+        <interface id="0" name="e0/0" type="ethernet" network_id="1"/>
+        <interface id="16" name="e0/1" type="ethernet" network_id="2"/>
+        <interface id="32" name="e0/2" type="ethernet" network_id="3"/>
+        <interface id="48" name="e0/3" type="ethernet" network_id="4"/>
+        <interface id="1" name="e1/0" type="ethernet" network_id="10"/>
+        <interface id="17" name="e1/1" type="ethernet" network_id="8"/>
+      </node>
+      <node id="3" name="SW3" type="iol" template="iol" image="i86bi_linux_l2-adventerprisek9-ms.SSA.high_iron_20180510.bin" ethernet="3" nvram="1024" ram="256" serial="0" console="" delay="0" icon="Switch-3D-L3-S.svg" config="0" left="219" top="361">
+        <interface id="0" name="e0/0" type="ethernet" network_id="5"/>
+        <interface id="16" name="e0/1" type="ethernet" network_id="6"/>
+        <interface id="1" name="e1/0" type="ethernet" network_id="11"/>
+        <interface id="17" name="e1/1" type="ethernet" network_id="7"/>
+      </node>
+      <node id="4" name="SW4" type="iol" template="iol" image="i86bi_linux_l2-adventerprisek9-ms.SSA.high_iron_20180510.bin" ethernet="3" nvram="1024" ram="256" serial="0" console="" delay="0" icon="Switch-3D-L3-S.svg" config="0" left="469" top="361">
+        <interface id="0" name="e0/0" type="ethernet" network_id="5"/>
+        <interface id="16" name="e0/1" type="ethernet" network_id="6"/>
+        <interface id="1" name="e1/0" type="ethernet" network_id="12"/>
+        <interface id="17" name="e1/1" type="ethernet" network_id="8"/>
+      </node>
+      <node id="5" name="VPC1" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="PC-2D-Desktop-Generic-S.svg" config="0" left="73" top="220">
+        <interface id="0" name="eth0" type="ethernet" network_id="9"/>
+      </node>
+      <node id="6" name="VPC2" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="PC-2D-Desktop-Generic-S.svg" config="0" left="673" top="220">
+        <interface id="0" name="eth0" type="ethernet" network_id="10"/>
+      </node>
+      <node id="7" name="VPC3" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="PC-2D-Desktop-Generic-S.svg" config="0" left="73" top="370">
+        <interface id="0" name="eth0" type="ethernet" network_id="11"/>
+      </node>
+      <node id="8" name="VPC4" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="PC-2D-Desktop-Generic-S.svg" config="0" left="673" top="370">
+        <interface id="0" name="eth0" type="ethernet" network_id="12"/>
+      </node>
+      <node id="9" name="R1" type="dynamips" template="c3725" image="c3725-adventerprisek9-mz.124-15.T14.image" idlepc="0x60c08728" nvram="128" ram="256" console="" delay="0" icon="Router2.png" config="0" left="129" top="24">
+        <slot id="1" module="NM-1FE-TX"/>
+        <interface id="0" name="fa0/0" type="ethernet" network_id="13"/>
+        <interface id="16" name="fa1/0" type="ethernet" network_id="15"/>
+      </node>
+    </nodes>
+    <networks>
+      <network id="1" type="bridge" name="Net-SW1iface_0" left="279" top="251" visibility="0" icon="lan.png"/>
+      <network id="2" type="bridge" name="Net-SW1iface_16" left="279" top="251" visibility="0" icon="lan.png"/>
+      <network id="3" type="bridge" name="Net-SW1iface_32" left="279" top="251" visibility="0" icon="lan.png"/>
+      <network id="4" type="bridge" name="Net-SW1iface_48" left="279" top="251" visibility="0" icon="lan.png"/>
+      <network id="5" type="bridge" name="Net-SW3iface_0" left="279" top="401" visibility="0" icon="lan.png"/>
+      <network id="6" type="bridge" name="Net-SW3iface_16" left="279" top="401" visibility="0" icon="lan.png"/>
+      <network id="7" type="bridge" name="Net-SW1iface_17" left="279" top="251" visibility="0" icon="lan.png"/>
+      <network id="8" type="bridge" name="Net-SW2iface_17" left="529" top="251" visibility="0" icon="lan.png"/>
+      <network id="9" type="bridge" name="Net-VPC1iface_0" left="133" top="260" visibility="0" icon="lan.png"/>
+      <network id="10" type="bridge" name="Net-SW2iface_1" left="529" top="251" visibility="0" icon="lan.png"/>
+      <network id="11" type="bridge" name="Net-VPC3iface_0" left="133" top="410" visibility="0" icon="lan.png"/>
+      <network id="12" type="bridge" name="Net-SW4iface_1" left="529" top="401" visibility="0" icon="lan.png"/>
+      <network id="13" type="bridge" name="Net-R1iface_0" left="264" top="79" visibility="0" icon="lan.png"/>
+      <network id="15" type="bridge" name="Net-R1iface_16" left="264" top="79" visibility="0" icon="lan.png"/>
+    </networks>
+  </topology>
+  <objects>
+    <configs>
+      <config id="5">c2V0IHBjbmFtZSBWUENTCmlwIDE5Mi4xNjguMTAuMTAgMTkyLjE2OC4xMC4xIDI0Cg==</config>
+      <config id="6">c2V0IHBjbmFtZSBWUENTCmlwIDE5Mi4xNjguMjAuMTAgMTkyLjE2OC4yMC4xIDI0Cg==</config>
+      <config id="7">c2V0IHBjbmFtZSBWUENTCmlwIDE5Mi4xNjguMzAuMTAgMTkyLjE2OC4zMC4xIDI0Cg==</config>
+      <config id="8">c2V0IHBjbmFtZSBWUENTCmlwIDE5Mi4xNjguMTAuMTEgMTkyLjE2OC4xMC4xIDI0Cg==</config>
+    </configs>
+  </objects>
+</lab>
