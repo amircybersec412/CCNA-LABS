@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<lab name="CCNP_OSPF_Advanced_Lab" version="1" scripttimeout="300" lock="0">
+  <topology>
+    <nodes>
+      <node id="1" name="R1" type="dynamips" template="c3725" image="c3725-adventerprisek9-mz.124-15.T14.image" idlepc="0x60c08728" nvram="128" ram="256" console="" delay="0" icon="Router2.png" config="0" left="162" top="183">
+        <slot id="1" module="NM-1FE-TX"/>
+        <slot id="2" module="NM-1FE-TX"/>
+        <interface id="0" name="fa0/0" type="ethernet" network_id="1"/>
+        <interface id="1" name="fa0/1" type="ethernet" network_id="5"/>
+      </node>
+      <node id="2" name="R2" type="dynamips" template="c3725" image="c3725-adventerprisek9-mz.124-15.T14.image" idlepc="0x60c08728" nvram="128" ram="256" console="" delay="0" icon="Router2.png" config="0" left="363" top="183">
+        <slot id="1" module="NM-1FE-TX"/>
+        <slot id="2" module="NM-1FE-TX"/>
+        <interface id="0" name="fa0/0" type="ethernet" network_id="1"/>
+        <interface id="1" name="fa0/1" type="ethernet" network_id="2"/>
+        <interface id="16" name="fa1/0" type="ethernet" network_id="8"/>
+      </node>
+      <node id="3" name="R3" type="dynamips" template="c3725" image="c3725-adventerprisek9-mz.124-15.T14.image" idlepc="0x60c08728" nvram="128" ram="256" console="" delay="0" icon="Router2.png" config="0" left="570" top="174">
+        <slot id="1" module="NM-1FE-TX"/>
+        <slot id="2" module="NM-1FE-TX"/>
+        <interface id="0" name="fa0/0" type="ethernet" network_id="3"/>
+        <interface id="1" name="fa0/1" type="ethernet" network_id="2"/>
+      </node>
+      <node id="4" name="R4" type="dynamips" template="c3725" image="c3725-adventerprisek9-mz.124-15.T14.image" idlepc="0x60c08728" nvram="128" ram="256" console="" delay="0" icon="Router2.png" config="0" left="573" top="309">
+        <slot id="1" module="NM-1FE-TX"/>
+        <slot id="2" module="NM-1FE-TX"/>
+        <interface id="0" name="fa0/0" type="ethernet" network_id="3"/>
+        <interface id="1" name="fa0/1" type="ethernet" network_id="4"/>
+      </node>
+      <node id="5" name="R5" type="dynamips" template="c3725" image="c3725-adventerprisek9-mz.124-15.T14.image" idlepc="0x60c08728" nvram="128" ram="256" console="" delay="0" icon="Router2.png" config="0" left="366" top="309">
+        <slot id="1" module="NM-1FE-TX"/>
+        <slot id="2" module="NM-1FE-TX"/>
+        <interface id="1" name="fa0/1" type="ethernet" network_id="4"/>
+        <interface id="16" name="fa1/0" type="ethernet" network_id="8"/>
+      </node>
+      <node id="6" name="R6" type="dynamips" template="c3725" image="c3725-adventerprisek9-mz.124-15.T14.image" idlepc="0x60c08728" nvram="128" ram="256" console="" delay="0" icon="Router2.png" config="0" left="168" top="426">
+        <slot id="1" module="NM-1FE-TX"/>
+        <slot id="2" module="NM-1FE-TX"/>
+        <interface id="0" name="fa0/0" type="ethernet" network_id="6"/>
+        <interface id="1" name="fa0/1" type="ethernet" network_id="5"/>
+      </node>
+      <node id="7" name="R7" type="dynamips" template="c3725" image="c3725-adventerprisek9-mz.124-15.T14.image" idlepc="0x60c08728" nvram="128" ram="256" console="" delay="0" icon="Router2.png" config="0" left="375" top="429">
+        <slot id="1" module="NM-1FE-TX"/>
+        <slot id="2" module="NM-1FE-TX"/>
+        <interface id="0" name="fa0/0" type="ethernet" network_id="6"/>
+        <interface id="1" name="fa0/1" type="ethernet" network_id="7"/>
+      </node>
+      <node id="8" name="R8" type="dynamips" template="c3725" image="c3725-adventerprisek9-mz.124-15.T14.image" idlepc="0x60c08728" nvram="128" ram="256" console="" delay="0" icon="Router2.png" config="0" left="594" top="429">
+        <slot id="1" module="NM-1FE-TX"/>
+        <slot id="2" module="NM-1FE-TX"/>
+        <interface id="1" name="fa0/1" type="ethernet" network_id="7"/>
+      </node>
+    </nodes>
+    <networks>
+      <network id="1" type="bridge" name="Net-R1iface_0" left="222" top="223" visibility="0" icon="lan.png"/>
+      <network id="2" type="bridge" name="Net-R2iface_1" left="423" top="202" visibility="0" icon="lan.png"/>
+      <network id="3" type="bridge" name="Net-R3iface_0" left="600" top="172" visibility="0" icon="lan.png"/>
+      <network id="4" type="bridge" name="Net-R4iface_1" left="579" top="298" visibility="0" icon="lan.png"/>
+      <network id="5" type="bridge" name="Net-R1iface_1" left="222" top="223" visibility="0" icon="lan.png"/>
+      <network id="6" type="bridge" name="Net-R6iface_0" left="375" top="430" visibility="0" icon="lan.png"/>
+      <network id="7" type="bridge" name="Net-R7iface_1" left="738" top="424" visibility="0" icon="lan.png"/>
+      <network id="8" type="bridge" name="Net-R2iface_16" left="423" top="202" visibility="0" icon="lan.png"/>
+    </networks>
+  </topology>
+</lab>
