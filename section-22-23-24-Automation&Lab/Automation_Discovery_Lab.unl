@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<lab name="Automation_Discovery_Lab" version="1" scripttimeout="300" lock="0">
+  <topology>
+    <nodes>
+      <node id="1" name="R1" type="dynamips" template="c3725" image="c3725-adventerprisek9-mz.124-15.T14.image" idlepc="0x60c08728" nvram="128" ram="256" console="" delay="0" icon="Router.png" config="0" left="243" top="195">
+        <slot id="1" module="NM-1FE-TX"/>
+        <slot id="2" module="NM-1FE-TX"/>
+        <interface id="0" name="fa0/0" type="ethernet" network_id="1"/>
+      </node>
+      <node id="2" name="R2" type="dynamips" template="c3725" image="c3725-adventerprisek9-mz.124-15.T14.image" idlepc="0x60c08728" nvram="128" ram="256" console="" delay="0" icon="Router.png" config="0" left="654" top="207">
+        <slot id="1" module="NM-1FE-TX"/>
+        <slot id="2" module="NM-1FE-TX"/>
+        <interface id="0" name="fa0/0" type="ethernet" network_id="2"/>
+      </node>
+      <node id="3" name="SW" type="iol" template="iol" image="i86bi_linux_l2-adventerprisek9-ms.SSA.high_iron_20180510.bin" ethernet="1" nvram="1024" ram="256" serial="0" console="" delay="0" icon="Switch2.png" config="0" left="447" top="282">
+        <interface id="0" name="e0/0" type="ethernet" network_id="1"/>
+        <interface id="16" name="e0/1" type="ethernet" network_id="2"/>
+        <interface id="32" name="e0/2" type="ethernet" network_id="3"/>
+      </node>
+      <node id="4" name="Linux" type="qemu" template="linux" image="linux-tinycore-6.4" console="telnet" cpu="1" cpulimit="0" ram="256" ethernet="1" uuid="7b0bc58d-54f5-4be3-96f6-dfd160f45362" firstmac="00:50:00:00:04:00" qemu_options="-machine type=pc,accel=kvm -vga std -usbdevice tablet -boot order=c -cpu qemu64" qemu_version="2.12.0" qemu_arch="x86_64" qemu_nic="virtio-net-pci" delay="0" icon="Linux.png" config="0" left="483" top="435">
+        <interface id="0" name="e0" type="ethernet" network_id="3"/>
+      </node>
+    </nodes>
+    <networks>
+      <network id="1" type="bridge" name="Net-R1iface_0" left="297" top="253" visibility="0" icon="lan.png"/>
+      <network id="2" type="bridge" name="Net-R2iface_0" left="714" top="247" visibility="0" icon="lan.png"/>
+      <network id="3" type="bridge" name="Net-SWiface_32" left="522" top="499" visibility="0" icon="lan.png"/>
+    </networks>
+  </topology>
+</lab>
